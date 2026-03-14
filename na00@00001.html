@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>na00@00001</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://moviifox.free.nf/player_style/moviifox_playerTVstyle2.css">
+    <!--<link rel="stylesheet" href="moviifox_playerTVstyle.css">-->
+
+</head>
+<body>
+
+    <div class="video-container" id="video-container">
+        <div.center>
+          <video id="video" controlslist="nodownload" poster="https://raw.githubusercontent.com/Moviifox/trailer/refs/heads/main/ass_HTML_player.webp">
+          </video>
+          <!-- Poster cover to avoid black screen before play when no history -->
+          <div id="poster-cover" class="poster-cover" aria-hidden="true"></div>
+        </div>
+        <div class="titlebar">
+          <div class="titlebox" id="titlebox">
+            <h1 class="h1">Pacific Rim Uprising</h1>&nbsp;&nbsp;&nbsp;<p class="h1">|</p>&nbsp;&nbsp;&nbsp;
+            <h2 class="h2">แปซิฟิค ริม 2 ปฏิวัติพลิกโลก</h2>
+          </div>
+        </div>
+  <!-- Resume Overlay (Full Page, not a popup) -->
+        <div id="resume-overlay" class="resume-overlay" aria-hidden="true">
+          <div class="resume-panel">
+            <div class="resume-text">
+              <h3 class="resume-title">ต้องการเล่นต่อจากตำแหน่งเดิมหรือเริ่มใหม่?</h3>
+              <p class="resume-subtitle" id="resume-time-text"></p>
+            </div>
+            <div class="resume-actions">
+              <button class="resume-btn primary" id="resume-continue">กด "Enter" เพื่อเล่นต่อ</button>
+              <button class="resume-btn" id="resume-restart">กด "ลูกศรซ้าย" เพื่อเริ่มใหม่</button>
+            </div>
+          </div>
+        </div>
+        <div class="controls" id="controls">
+          <div class="butcon">
+            <button class="icon-button" id="rewind"><i class="fas fa-backward"></i></button>
+            <button class="icon-button" id="play-pause"><i class="fas fa-play"></i></button>
+            <button class="icon-button" id="forward"><i class="fas fa-forward"></i></button>
+          </div>
+          <div class="upplusbutton">
+            <button class="icon-but" id="forward2"><i class="fa-solid fa-circle-up"></i></button><span class="plustime">+60s</span>
+          </div>
+          <div class="progress-box">
+            <div class="progress-bar" id="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+          </div>
+            <div class="time">
+                <span id="current-time">00:00</span> / <span id="total-time">00:00</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        if (Hls.isSupported()) {
+            const hls = new Hls();
+            hls.loadSource('https://m1-txt-2.xdomovie247.com/playlist2/detail/6a8725a4/360/hls/index.m3u8'); // Replace with your .m3u8 file URL
+            hls.attachMedia(video);
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = 'linkUrl'; // Replace with your .m3u8 file URL
+        }
+    </script>
+
+    <script src="https://moviifox.free.nf/player_style/moviifox_player_TV2.js"></script>
+    <!--<script src="script.js"></script>-->
+
+</body>
+</html>
